@@ -1,0 +1,29 @@
+<header class="mb-4">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"></ul>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">TRIP DIARY</a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <% if logged_in? %>
+           <li class="dropdown-item"><%= link_to 'TRIP DIARY' ,root_path, class:'nav_link'%></li>
+           <li class="dropdown-divider"></li>
+           <li class="dropdown-item"><%= link_to 'MY TRIP' ,trips_path, class:'nav_link'%></li>
+           <li class="dropdown-item"><%= link_to 'TRIP' ,new_trip_path, class:'nav_link'%></li>
+           <li class="dropdown-item"><%= link_to 'FAVORITE TRIP' , class:'nav_link'%></li>
+           <li class="dropdown-item"><%= link_to 'LOG OUT' ,logout_path, method: :delete ,class:'nav_link' %></li>
+          <% else %>
+           <li class="dropdown-item"><%= link_to 'TRIP DIARY', root_path, class:'nav_link'%></li>
+           <li class="dropdown-divider"></li>
+           <li class="dropdown-item"><%= link_to 'SIGN UP' , signup_path, class:'nav_link'%></li>
+           <li class="dropdown-item"><%= link_to 'LOG IN' , login_path, class:'nav_link'%></li>
+          <% end %>
+        </ul>
+      </li>
+    </div>
+  </nav>
+</header>

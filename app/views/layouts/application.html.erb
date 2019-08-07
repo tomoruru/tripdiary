@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+
+        <title>TRIP DIARY</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    
+        <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS, then Font Awesome -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    </head>
+    
+    <style>
+            .row div {
+                 padding: 0.5em;
+                text-align: center;
+            }
+    </style>
+    <div class="row">
+        <div class="col-lg-12 , h1"><%= link_to 'TRIP DIARY' ,root_path, class:'nav_link'%></div>
+    </div>
+        
+    <body>
+    <%= render 'layouts/navbar' %>
+    
+    <div class="container">
+      <%= render 'layouts/flash_messages' %>
+      
+      <%= yield %>
+    </div> 
+  </body>
+</html>
