@@ -1,5 +1,5 @@
 <div class = "row">
-  <div class = 'col-lg-5 '>
+  <div class = 'col-lg-6 '>
     <div class="card" >
     
       <div class="card-header">
@@ -23,11 +23,18 @@
         <p><%= @trip.hotel %></p>
       </div>
       
+      <div class="card-header">
+          <i class="far fa-images fa-lg"></i>
+      </div>
+      <div class="card-body">
+          <p><%= image_tag @trip.image.url ,:size =>"500x400" if @trip.image? %></p>
+      </div>
+      
     </div>
   </div>
   
 
-    <div class = 'col-lg-7'>  
+    <div class = 'col-lg-6'>  
       <div class="card">
         
         <div class="card-header">
@@ -37,12 +44,6 @@
           <p><%= @trip.what_did %></p>
         </div>
     
-        <div class="card-header">
-          <i class="far fa-images fa-lg"></i>
-        </div>
-        <div class="card-body">
-          <p><%= image_tag @trip.image.url ,:size =>"500x400" if @trip.image? %></p>
-        </div>
       </div>
     </div>
   </div>

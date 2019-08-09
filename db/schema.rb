@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_04_132132) do
+ActiveRecord::Schema.define(version: 2019_08_09_123515) do
 
   create_table "trips", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "where"
-    t.string "transpotation"
-    t.string "hotel"
-    t.string "what_did"
+    t.text "where"
+    t.text "transpotation"
+    t.text "hotel"
+    t.text "what_did"
+    t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
