@@ -10,7 +10,7 @@ class TripsController < ApplicationController
       redirect_to trips_path
     else
       @trips = current_user.trips.order(id: :desc).page(params[:page])
-      flash.now[:danger] = '1000文字以内で入力してください。'
+      flash.now[:danger] = 'tripの投稿に失敗しました。'
       render "trips/new"
     end
   end
