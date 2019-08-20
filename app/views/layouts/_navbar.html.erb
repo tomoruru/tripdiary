@@ -14,7 +14,7 @@
            <li class="dropdown-divider"></li>
            <li class="dropdown-item"><%= link_to 'MY TRIP' ,trips_path, class:'nav_link'%></li>
            <li class="dropdown-item"><%= link_to 'TRIP' ,new_trip_path, class:'nav_link'%></li>
-           <li class="dropdown-item"><%= link_to 'FAVORITE TRIP' , class:'nav_link'%></li>
+           <li class="dropdown-item"><%= link_to 'FAVORITE TRIP' ,likes_user_path(current_user), class:'nav_link'%></li>
            <li class="dropdown-item"><%= link_to 'LOG OUT' ,logout_path, method: :delete ,class:'nav_link' %></li>
           <% else %>
            <li class="dropdown-item"><%= link_to 'TRIP DIARY', root_path, class:'nav_link'%></li>

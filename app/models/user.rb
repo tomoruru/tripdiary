@@ -7,4 +7,19 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :trips
+  has_many :favorites
+  has_many :favorite_trips, through: :favorites, source: :trip
+  
+  def favorite(trip)
+    self.favorites.find_or_create_by(trip_id: trip.id)
+  end
+  
+  def unfavorite(trip)
+    favorite = self.favorites.find_or_create_by(trip_id: trip.id)
+    favorite.destroy if favorite
+  end
+  
+  def favorite?(trip)
+    self.favorite_trips.include?(trip)
+  end
 end
